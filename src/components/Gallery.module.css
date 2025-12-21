@@ -1,0 +1,251 @@
+.section {
+  padding: 100px 0;
+  background-color: #000;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+/* === СТИЛИ СЛАЙДЕРА (Оставляем без изменений) === */
+.swiper {
+  padding-bottom: 50px !important;
+}
+
+.slideContent {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #222;
+  background: #111;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* === СТИЛИ СЕТКИ (Квадратные блоки) === */
+.gridContainer {
+  margin-top: 100px;
+}
+
+.gridHeader {
+  margin-bottom: 40px;
+  border-left: 4px solid #f0c419;
+  padding-left: 20px;
+}
+
+.gridTitle {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.gridSubtitle {
+  color: #666;
+  font-size: 1.1rem;
+  margin-top: 5px;
+}
+
+.imageGrid {
+  display: grid;
+  /* Уменьшили minmax до 280px, чтобы квадраты не были слишком огромными */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gridItem {
+  cursor: pointer;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 15px; /* Немного уменьшили радиус для строгого вида */
+  overflow: hidden;
+  
+  /* ГЛАВНОЕ ИЗМЕНЕНИЕ: Делаем блок строго квадратным */
+  aspect-ratio: 1 / 1; 
+  
+  background: #111;
+  border: 1px solid #1a1a1a;
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  
+  /* ГЛАВНОЕ ИЗМЕНЕНИЕ: Вертикальное фото заполняет квадрат без искажений */
+  object-fit: cover; 
+  object-position: center; /* Центрируем фото внутри квадрата */
+  
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zoomIcon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #f0c419;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.categoryBadge {
+  background: #f0c419;
+  color: #000;
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.imageLabel {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Ховер эффекты */
+.gridItem:hover .gridImage {
+  transform: scale(1.1);
+}
+
+.gridItem:hover .imageOverlay {
+  opacity: 1;
+}
+
+.gridItem:hover .zoomIcon {
+  opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .imageGrid {
+    /* На мобильных по 2 квадрата в ряд */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .gridTitle { font-size: 1.5rem; }
+  .section { padding: 60px 0; }
+  
+  .imageLabel {
+    font-size: 0.9rem;
+  }
+}
+.lightboxOverlay {
+  position: fixed;
+  inset: 0; /* Растягиваем на весь экран */
+  background: rgba(0, 0, 0, 0.95); /* Очень темный фон */
+  backdrop-filter: blur(10px); /* Размытие заднего фона */
+  z-index: 3000; /* Должен быть выше всего остального (меню, другие модалки) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 90%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightboxImage {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 80vh; /* Ограничиваем высоту, чтобы влезла подпись */
+  object-fit: contain; /* Важно: картинка не обрезается, а вписывается */
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.lightboxCaption {
+  margin-top: 15px;
+  text-align: center;
+  color: white;
+}
+
+.lightboxCaption h3 {
+  margin: 10px 0 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Кнопка закрытия */
+.closeBtn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 3001;
+  transition: color 0.3s, transform 0.3s;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeBtn:hover {
+  color: #f0c419;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  /* Если на совсем маленьких экранах хочется по одному крупному квадрату */
+  /* .imageGrid { grid-template-columns: 1fr; } */
+}
+
+@media (max-width: 768px) {
+  .closeBtn {
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+  }
+
+  .lightboxImage {
+    max-height: 70vh;
+  }
+}

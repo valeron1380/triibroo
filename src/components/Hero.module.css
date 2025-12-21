@@ -1,0 +1,64 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    /* Заглушка фона - замените url на реальное фото */
+    background-image: url('/images/hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Параллакс эффект */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+  }
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .title {
+    font-size: 5rem;
+    letter-spacing: 10px;
+    margin-bottom: 10px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    font-size: 1.5rem;
+    color: #ccc;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .ctaButton {
+    padding: 15px 40px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .ctaButton:hover {
+    background: white;
+    color: black;
+  }
+  @media (max-width: 768px) {
+    .title { 
+      font-size: 3rem; 
+    }
+    
+    .hero {
+      /* Фото для телефонов (вертикальное) */
+      background-image: url('/images/hero-mobile.jpg');
+      background-attachment: scroll; /* На телефонах параллакс часто тормозит, лучше отключить */
+      background-position: center center;
+      background-size: cover;
+    }
+  }

@@ -1,0 +1,12 @@
+.section { padding: 40px 0; background: #000; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.promoGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+.promoCard { background: #111; padding: 40px; border-radius: 25px; position: relative; border: 1px solid #222; }
+.gold { border-color: #f0c419; }
+.badge { position: absolute; top: 20px; right: 20px; background: #f0c419; color: black; padding: 5px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+.promoCard h3 { font-size: 1.8rem; margin-bottom: 15px; }
+.promoCard p { color: #888; line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .promoGrid { grid-template-columns: 1fr; }
+}

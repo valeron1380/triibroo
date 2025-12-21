@@ -1,0 +1,77 @@
+.botButton {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 998; /* Чуть ниже модалок, но выше контента */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #229ED9; /* Telegram Blue */
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4);
+    font-weight: 600;
+    font-family: var(--font-main);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .botButton:hover {
+    box-shadow: 0 6px 20px rgba(34, 158, 217, 0.6);
+  }
+  
+  .iconContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    z-index: 2;
+  }
+  
+  .text {
+    font-size: 0.95rem;
+  }
+  
+  /* Анимация пульсации (чтобы кнопку заметили) */
+  .ping {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    z-index: 1;
+  }
+  
+  @keyframes ping {
+    75%, 100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  /* АДАПТИВНОСТЬ */
+  @media (max-width: 768px) {
+    .botButton {
+      bottom: 20px;
+      right: 20px;
+      padding: 12px; /* Делаем круглой на мобильных, чтобы не занимать место */
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      justify-content: center;
+    }
+    
+    .text {
+      display: none; /* Скрываем текст на телефоне, оставляем только иконку */
+    }
+    
+    /* Если открыта корзина (она снизу), поднимаем кнопку бота повыше */
+    /* Это нужно регулировать глобально, но пока оставим в углу */
+  }

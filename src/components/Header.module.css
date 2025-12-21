@@ -1,0 +1,140 @@
+.header {
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid #333;
+  padding: 15px 0;
+  position: sticky; /* Закрепление шапки при прокрутке */
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.logo a {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* === СТИЛИ ЛОГОТИПА === */
+.logoImage {
+  /* Оптимальная высота логотипа для шапки */
+  height: 50px; 
+  width: auto;
+  transition: opacity 0.3s;
+}
+
+.logoImage:hover {
+  opacity: 0.8;
+}
+
+/* === СТИЛИ НАВИГАЦИИ === */
+.nav {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  flex: 1;
+}
+
+.navLink {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+/* === СТИЛИ КНОПОК ДЕЙСТВИЙ === */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.phoneLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.phoneLink:hover {
+  color: #ccc; 
+}
+
+.bookingBtn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.bookingBtn:hover {
+  background-color: #eee;
+  transform: translateY(-1px);
+}
+
+/* =================================== */
+/* === АДАПТИВНОСТЬ === */
+/* =================================== */
+
+/* Скрываем навигацию на средних экранах */
+@media (max-width: 900px) {
+  .nav {
+    display: none; 
+  }
+}
+
+/* Изменения для мобильных устройств */
+@media (max-width: 600px) {
+  .container {
+    padding: 0 15px; 
+  }
+  
+  /* Скрываем текст номера телефона */
+  .phoneLink span {
+    display: none; 
+  }
+  .phoneLink {
+      padding: 5px;
+      gap: 0; 
+  }
+  
+  .bookingBtn {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+  }
+  
+  .logoImage {
+      height: 35px; /* Уменьшаем логотип */
+  }
+  
+  .actions {
+      gap: 10px; /* Уменьшаем расстояние между элементами */
+  }
+}
