@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const BotButton = () => {
   return (
     <motion.a
-      href="tg://resolve?domain=tribro_bot" // Ссылка для открытия приложения Telegram
+      href="https://web.telegram.org/k/#@tribro_bot" // Ссылка для открытия приложения Telegram
       target="_blank"
       rel="noopener noreferrer"
       className={styles.botButton}

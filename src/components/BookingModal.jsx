@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Services.module.css';
-import { FaTimes, FaWhatsapp, FaPhoneAlt, FaInfoCircle } from 'react-icons/fa';
+import { FaTimes, FaPhoneAlt, FaInfoCircle, FaTelegramPlane } from 'react-icons/fa';
 import { MdDirectionsCar } from 'react-icons/md';
 import { FaCarSide, FaTruckMonster, FaShuttleVan } from 'react-icons/fa';
 import { MdOutlineDirectionsCarFilled } from 'react-icons/md';
@@ -13,21 +13,34 @@ const CLASS_ICONS = [
   { icon: <FaShuttleVan />, label: "Микроавтобус" }
 ];
 
+const TELEGRAM_USERNAME = 'tribro13';
+
 const BookingModal = ({ isOpen, onClose, orderData = null }) => {
   if (!isOpen) return null;
 
   const createMessage = () => {
     if (orderData && orderData.selectedDetails && orderData.selectedDetails.length > 0) {
-      let text = `Здравствуйте! Заявка (Класс: ${orderData.carClass + 1}):\n`;
+      let text = `Здравствуйте! Заявка (Класс: ${orderData.carClass + 1}):\n\n`;
       orderData.selectedDetails.forEach(item => { 
-        text += `- ${item.title}: ${item.currentPrice}₽\n`; 
+        const price = typeof item.currentPrice === 'string' ? item.currentPrice : `${item.currentPrice.toLocaleString()} ₽`;
+        text += `• ${item.title}: ${price}\n`; 
       });
-      text += `\nИтого: ${orderData.totalPrice}₽`;
+      text += `\nИтого: ${orderData.totalPrice.toLocaleString()} ₽`;
       return encodeURIComponent(text);
     } else {
       // Простое сообщение для записи без выбранных услуг
       return encodeURIComponent('Здравствуйте! Хочу записаться на услугу.');
     }
+  };
+
+  const getTelegramLink = () => {
+    const message = createMessage();
+    return `https://t.me/${TELEGRAM_USERNAME}?text=${message}`;
+  };
+
+  const handleTelegramClick = () => {
+    window.open(getTelegramLink(), '_blank');
+    onClose();
   };
 
   return (
@@ -63,9 +76,13 @@ const BookingModal = ({ isOpen, onClose, orderData = null }) => {
         )}
         
         <div className={styles.socialButtons}>
-          <a href={`https://wa.me/79254901313?text=${createMessage()}`} target="_blank" rel="noreferrer" className={styles.waBtn}>
-            <FaWhatsapp /> Написать в WhatsApp
-          </a>
+          <button 
+            onClick={handleTelegramClick}
+            className={styles.tgBtn}
+          >
+            <FaTelegramPlane />
+            Написать в Telegram
+          </button>
           <a href="tel:+79254901313" className={styles.phoneBtn}>
             <FaPhoneAlt /> Позвонить
           </a>

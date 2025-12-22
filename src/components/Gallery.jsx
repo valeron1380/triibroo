@@ -22,12 +22,15 @@ const sliderPhotos = [
 
 // Данные для сетки (оставляем как есть)
 const gridItems = [
-  { id: 1, src: '/images/grid1.jpg', title: 'Мойка днища', category: 'Кузов' },
+  { id: 1, src: '/images/grid1.jpg', title: 'Мойка днища', category: 'Днище' },
   { id: 2, src: '/images/grid2.jpg', title: 'Мойка кузова', category: 'Кузов' },
   { id: 3, src: '/images/grid3.jpg', title: 'Поклейка плёнки', category: 'Пленка' },
   { id: 4, src: '/images/grid4.jpg', title: 'Полировка кузова', category: 'Полировка' },
   { id: 5, src: '/images/grid5.jpg', title: 'Чистка салона', category: 'Салон' },
   { id: 6, src: '/images/grid6.jpg', title: 'Установка защитной плёнки', category: 'Салон' },
+  { id: 7, src: '/images/grid7.jpg', title: 'Мойка днища', category: 'Днище' },
+  { id: 8, src: '/images/grid8.jpg', title: 'Установка шумоизоляции', category: 'Шумоизоляция' },
+  { id: 9, src: '/images/grid9.jpg', title: 'Наша шумоизоляция', category: 'Шумоизоляция' },
 ];
 
 const Gallery = () => {
@@ -153,35 +156,17 @@ const Gallery = () => {
       {/* Секция с соц сетями */}
       <div className={styles.socialSection}>
         <div className={styles.container}>
-          <h2 className={styles.socialHeading}>Больше фото в наших соц сетях</h2>
+          <h2 className={styles.socialHeading}>Больше фото и видео в нашем Telegram канале</h2>
           <Reveal delay={0.1}>
             <div className={styles.socialButtons}>
-              <a 
-                href="https://vk.com/club228221372" 
-                target="_blank" 
-                rel="noreferrer" 
-                className={styles.socialBtn}
-              >
-                <FaVk className={styles.socialIcon} />
-                <span className={styles.socialText}>ВКонтакте</span>
-              </a>
-              <a 
-                href="tg://resolve?domain=tribro1" 
+            <a 
+                href="https://web.telegram.org/k/#@tribro1" 
                 target="_blank" 
                 rel="noreferrer" 
                 className={styles.socialBtn}
               >
                 <FaTelegramPlane className={styles.socialIcon} />
                 <span className={styles.socialText}>Telegram</span>
-              </a>
-              <a 
-                href="https://wa.me/79254901313" 
-                target="_blank" 
-                rel="noreferrer" 
-                className={styles.socialBtn}
-              >
-                <FaWhatsapp className={styles.socialIcon} />
-                <span className={styles.socialText}>WhatsApp</span>
               </a>
             </div>
           </Reveal>
