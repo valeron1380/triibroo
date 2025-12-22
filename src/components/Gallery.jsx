@@ -153,9 +153,7 @@ const Gallery = () => {
       {/* Секция с соц сетями */}
       <div className={styles.socialSection}>
         <div className={styles.container}>
-          <Reveal>
-            <h2 className={styles.socialHeading}>Больше фото в наших соц сетях</h2>
-          </Reveal>
+          <h2 className={styles.socialHeading}>Больше фото в наших соц сетях</h2>
           <Reveal delay={0.1}>
             <div className={styles.socialButtons}>
               <a 

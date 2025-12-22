@@ -1,5 +1,5 @@
 .section {
-  padding: 00px 0;
+  padding: 10px 0;
   background-color: #000;
   color: #fff;
 }
@@ -292,15 +292,20 @@
 /* === СЕКЦИЯ С СОЦ СЕТЯМИ === */
 .socialSection {
   margin-top: 40px;
-  padding: 40px 0;
+  padding: 40px 0 50px 0;
   background: #000;
+  overflow: visible;
+}
+
+.socialSection .container {
+  overflow: visible;
 }
 
 .socialHeading {
   text-align: center;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 900;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   text-transform: uppercase;
   color: white;
   letter-spacing: -1px;
@@ -311,6 +316,8 @@
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
+  padding-bottom: 20px;
+  height: auto;
 }
 
 .socialBtn {
@@ -329,6 +336,7 @@
   min-width: 160px;
   position: relative;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .socialBtn::before {
@@ -370,14 +378,18 @@
   z-index: 1;
 }
 
-/* Цвета для разных соц сетей */
+/* Цвета для разных соц сетей - иконки всегда цветные */
+.socialBtn:nth-child(1) .socialIcon {
+  color: #0766c2;
+}
+
 .socialBtn:nth-child(1):hover {
   background: rgba(7, 102, 194, 0.1);
   border-color: #0766c2;
 }
 
-.socialBtn:nth-child(1) .socialIcon {
-  color: #0766c2;
+.socialBtn:nth-child(2) .socialIcon {
+  color: #229ED9;
 }
 
 .socialBtn:nth-child(2):hover {
@@ -385,8 +397,8 @@
   border-color: #229ED9;
 }
 
-.socialBtn:nth-child(2) .socialIcon {
-  color: #229ED9;
+.socialBtn:nth-child(3) .socialIcon {
+  color: #25D366;
 }
 
 .socialBtn:nth-child(3):hover {
@@ -394,15 +406,12 @@
   border-color: #25D366;
 }
 
-.socialBtn:nth-child(3) .socialIcon {
-  color: #25D366;
-}
-
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
   .socialSection {
     margin-top: 30px;
-    padding: 30px 0;
+    padding: 30px 0 70px 0;
+    overflow: visible;
   }
 
   .socialHeading {
