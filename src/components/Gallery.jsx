@@ -60,7 +60,7 @@ const Gallery = () => {
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            autoplay={{ delay: 3000 }}
+            autoplay={{ delay: 8000 }}
             breakpoints={{
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
@@ -86,8 +86,8 @@ const Gallery = () => {
         <div className={styles.gridContainer}>
           <Reveal>
             <div className={styles.gridHeader}>
-              <h3 className={styles.gridTitle}>Галерея деталей</h3>
-              <p className={styles.gridSubtitle}>Результаты нашей ежедневной работы</p>
+              <h3 className={styles.gridTitle}>Процесс работы</h3>
+              <p className={styles.gridSubtitle}>Представляем Вашему вниманию процесс работы нашего сервиса</p>
             </div>
           </Reveal>
 

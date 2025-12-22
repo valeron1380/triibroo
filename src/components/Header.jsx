@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Header.module.css';
 import { FaPhoneAlt } from 'react-icons/fa';
+import { FaVk, FaTelegram, FaWhatsapp } from 'react-icons/fa';
 
 /**
  * Компонент шапки сайта.
@@ -32,11 +33,13 @@ const Header = ({ onOpenBooking }) => {
 
         {/* --- КНОПКИ ДЕЙСТВИЙ (КОНТАКТ) --- */}
         <div className={styles.actions}>
+        
           {/* Ссылка на телефон (замените номер) */}
           <a href="tel:+79254901313" className={styles.phoneLink}>
             <FaPhoneAlt />
             <span>+7 (925) 490-13-13</span>
           </a>
+          
           
           {/* Кнопка открытия общей модалки записи */}
           <button 
@@ -45,6 +48,11 @@ const Header = ({ onOpenBooking }) => {
           >
             Записаться
           </button>
+          <div className={styles.headerSocials}>
+            <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaVk /></a>
+            <a href="https://t.me/tribro1" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaTelegram /></a>
+            <a href="https://wa.me/79254901313" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaWhatsapp /></a>
+          </div>
         </div>
       </div>
     </header>

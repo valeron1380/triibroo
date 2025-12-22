@@ -21,7 +21,46 @@
 
 /* === СТИЛИ СЛАЙДЕРА (Оставляем без изменений) === */
 .swiper {
-  padding-bottom: 50px !important;
+  padding-bottom: 50px !important; /* Чуть меньше отступа снизу, т.к. стрелки теперь по бокам */
+  position: relative;
+}
+
+/* Кнопки слайдера — по бокам и по центру по вертикали относительно фотографий */
+.swiper :global(.swiper-button-prev),
+.swiper :global(.swiper-button-next) {
+  top: 50%;
+  transform: translateY(-50%) scale(1.5); /* увеличиваем саму кнопку целиком */
+  transform-origin: center;
+  color: #f0c419;
+  /* увеличиваем размер стандартной SVG-иконки Swiper */
+  --swiper-navigation-size: 42px;
+  /* делаем стрелку визуально «жирнее» за счёт яркого подсвета */
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.9));
+}
+
+.swiper :global(.swiper-button-prev) {
+  left: -70px; /* немного дальше за пределами слайда слева */
+}
+
+.swiper :global(.swiper-button-next) {
+  right: -70px; /* немного дальше за пределами слайда справа */
+}
+
+.swiper :global(.swiper-button-prev)::after,
+.swiper :global(.swiper-button-next)::after {
+  font-size: 34px; /* увеличили размер самой стрелки */
+  font-weight: 900;
+}
+
+/* На мобильных возвращаем стрелки внутрь, чтобы не обрезались по краям экрана */
+@media (max-width: 768px) {
+  .swiper :global(.swiper-button-prev) {
+    left: 8px;
+  }
+
+  .swiper :global(.swiper-button-next) {
+    right: 8px;
+  }
 }
 
 .slideContent {

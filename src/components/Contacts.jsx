@@ -34,9 +34,12 @@ const Contacts = () => {
           </div>
 
           <div className={styles.socials}>
-          <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer"><FaVk /></a>
-          <a href="https://web.telegram.org/k/#@tribro1" target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
-          <a href="https://wa.me/79254901313" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+            <h3 className={styles.socialsLabel}>Наши соцсети</h3>
+            <div className={styles.socialsButtons}>
+              <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer"><FaVk /></a>
+              <a href="https://web.telegram.org/k/#@tribro1" target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
+              <a href="https://wa.me/79254901313" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+            </div>
           </div>
         </div>
 

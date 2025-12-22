@@ -8,7 +8,7 @@ const Promo = () => {
       <div className={styles.container}>
         <div className={styles.promoGrid}>
           <Reveal>
-            <div className={styles.promoCard}>
+            <div className={`${styles.promoCard} ${styles.gold}`}>
               <span className={styles.badge}>Акция</span>
               <h3>Кэшбэк с каждого чека</h3>
               <p>Получайте кэшбэк с каждого визита! Накопительная система бонусов за каждую оплаченную услугу.</p>
@@ -24,7 +24,7 @@ const Promo = () => {
           </Reveal>
 
           <Reveal delay={0.2}>
-            <div className={styles.promoCard}>
+            <div className={`${styles.promoCard} ${styles.gold}`}>
               <span className={styles.badge}>Для новых клиентов</span>
               <h3>Скидка 10% новым гостям</h3>
               <p>При первом посещении получите скидку 10% на любую услугу. Добро пожаловать в TRI-BRO!</p>

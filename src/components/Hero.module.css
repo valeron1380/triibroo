@@ -31,17 +31,17 @@
     -webkit-text-fill-color: transparent;
   }
   .subtitle {
-    font-size: 1.5rem;
-    color: #ccc;
+    font-size: 2rem;
+    color: #ffffff;
     margin-bottom: 40px;
     font-weight: 300;
   }
   .ctaButton {
-    padding: 15px 40px;
+    padding: 20px 60px;
     border: 1px solid white;
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 900;
     cursor: pointer;
     transition: all 0.3s;
   }

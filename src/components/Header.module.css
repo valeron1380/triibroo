@@ -60,13 +60,6 @@
 }
 
 /* === СТИЛИ КНОПОК ДЕЙСТВИЙ === */
-.actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex: 1;
-  justify-content: flex-end;
-}
 
 .phoneLink {
   display: flex;
@@ -97,6 +90,30 @@
 .bookingBtn:hover {
   background-color: #eee;
   transform: translateY(-1px);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.headerSocials {
+  display: flex;
+  gap: 12px;
+}
+
+.headerSocBtn {
+  color: #fff;
+  font-size: 1.2rem;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.headerSocBtn:hover {
+  color: #f0c419;
+  transform: translateY(-2px);
 }
 
 /* =================================== */
@@ -136,5 +153,11 @@
   
   .actions {
       gap: 10px; /* Уменьшаем расстояние между элементами */
+  }
+}
+
+@media (max-width: 480px) {
+  .headerSocials {
+    display: none;
   }
 }

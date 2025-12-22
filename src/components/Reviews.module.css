@@ -157,6 +157,7 @@
 /* SWIPER FIXES */
 .swiper {
   padding: 10px 10px 60px 10px !important;
+  position: relative;
 }
 
 :global(.swiper-slide) {
@@ -165,6 +166,23 @@
 
 :global(.swiper-pagination-bullet-active) {
   background: #f0c419 !important;
+}
+
+/* Увеличенные и более заметные стрелки в слайдере отзывов */
+.swiper :global(.swiper-button-prev),
+.swiper :global(.swiper-button-next) {
+  top: 50%;
+  transform: translateY(-50%) scale(1.5);
+  transform-origin: center;
+  color: #f0c419;
+  --swiper-navigation-size: 40px;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.9));
+}
+
+.swiper :global(.swiper-button-prev)::after,
+.swiper :global(.swiper-button-next)::after {
+  font-size: 32px; /* увеличен размер самой стрелки */
+  font-weight: 900;
 }
 
 @media (max-width: 768px) {
