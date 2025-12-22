@@ -2,7 +2,7 @@ import React, { useState } from 'react'; // Добавлен useState
 import styles from './Gallery.module.css';
 import { Reveal } from './ui/Reveal';
 import { motion, AnimatePresence } from 'framer-motion'; // Добавлен AnimatePresence
-import { FaSearchPlus, FaTimes } from 'react-icons/fa'; // Добавлен FaTimes
+import { FaSearchPlus, FaTimes, FaVk, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 
 // Импорты Swiper (оставляем как есть)
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -149,6 +149,46 @@ const Gallery = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Секция с соц сетями */}
+      <div className={styles.socialSection}>
+        <div className={styles.container}>
+          <Reveal>
+            <h2 className={styles.socialHeading}>Больше фото в наших соц сетях</h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className={styles.socialButtons}>
+              <a 
+                href="https://vk.com/club228221372" 
+                target="_blank" 
+                rel="noreferrer" 
+                className={styles.socialBtn}
+              >
+                <FaVk className={styles.socialIcon} />
+                <span className={styles.socialText}>ВКонтакте</span>
+              </a>
+              <a 
+                href="tg://resolve?domain=tribro1" 
+                target="_blank" 
+                rel="noreferrer" 
+                className={styles.socialBtn}
+              >
+                <FaTelegramPlane className={styles.socialIcon} />
+                <span className={styles.socialText}>Telegram</span>
+              </a>
+              <a 
+                href="https://wa.me/79254901313" 
+                target="_blank" 
+                rel="noreferrer" 
+                className={styles.socialBtn}
+              >
+                <FaWhatsapp className={styles.socialIcon} />
+                <span className={styles.socialText}>WhatsApp</span>
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </div>
     </section>
   );
 };
