@@ -74,9 +74,27 @@
 .phoneBtn { background: #333; border: 1px solid #555; }
 
 /* ТАБЛИЦА КЛАССОВ */
-.tableScroll { overflow: auto; padding: 20px; }
-.customTable { width: 100%; border-collapse: collapse; color: #ccc; font-size: 0.85rem; }
-.customTable th { background: #1a1a1a; text-align: left; color: #f0c419; padding: 12px; border-bottom: 2px solid #333; position: sticky; top: 0; }
+.tableScroll { 
+  overflow: auto; 
+  padding: 20px;
+  position: relative;
+}
+.customTable { 
+  width: 100%; 
+  border-collapse: collapse; 
+  color: #ccc; 
+  font-size: 0.85rem; 
+}
+.customTable thead th { 
+  background: #1a1a1a; 
+  text-align: left; 
+  color: #f0c419; 
+  padding: 12px; 
+  border-bottom: 2px solid #333; 
+  position: sticky; 
+  top: 0; 
+  z-index: 10;
+}
 .customTable td { padding: 12px; border-bottom: 1px solid #222; }
 
 @media (max-width: 768px) {
@@ -91,4 +109,26 @@
     bottom: 20px;
   }
   .heading { font-size: 2.2rem; }
+  .tableScroll { 
+    padding: 0;
+    max-height: calc(85vh - 80px);
+  }
+  .customTable thead th {
+    top: 0;
+    background: #1a1a1a;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .customTable th:first-child,
+  .customTable td:first-child {
+    padding-left: 20px;
+  }
+  .customTable th:last-child,
+  .customTable td:last-child {
+    padding-right: 20px;
+  }
+  .customTable th,
+  .customTable td {
+    padding: 10px 8px;
+    font-size: 0.75rem;
+  }
 }

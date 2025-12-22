@@ -6,6 +6,7 @@ const Promo = () => {
   return (
     <section id="promo" className={styles.section}>
       <div className={styles.container}>
+        <Reveal><h2 className={styles.heading}>Акции</h2></Reveal>
         <div className={styles.promoGrid}>
           <Reveal>
             <div className={`${styles.promoCard} ${styles.gold}`}>
