@@ -1,10 +1,83 @@
-.section { padding: 100px 0; background: #000; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-.heading { text-align: center; font-size: 3rem; font-weight: 900; margin-bottom: 50px; text-transform: uppercase; color: white; }
+.section { 
+  padding: 100px 0; 
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 30% 30%, rgba(34, 158, 217, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(133, 193, 226, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+.container { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.heading { 
+  text-align: center; 
+  font-size: 3rem; 
+  font-weight: 900; 
+  margin-bottom: 50px; 
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #229ED9 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
 .promoGrid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
-.promoCard { background: #111; padding: 40px; border-radius: 25px; position: relative; border: 1px solid #222; }
-.gold { border-color: #f0c419; }
-.badge { position: absolute; top: 20px; right: 20px; background: #f0c419; color: black; padding: 5px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+.promoCard { 
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  padding: 40px; 
+  border-radius: 25px; 
+  position: relative; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.promoCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(34, 158, 217, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.promoCard:hover::before {
+  opacity: 1;
+}
+
+.promoCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  border-color: rgba(34, 158, 217, 0.3);
+}
+
+.gold { 
+  border-color: #229ED9;
+  background: linear-gradient(135deg, rgba(34, 158, 217, 0.1) 0%, rgba(34, 158, 217, 0.05) 100%);
+  box-shadow: 0 0 30px rgba(34, 158, 217, 0.2);
+}
+.badge { position: absolute; top: 20px; right: 20px; background: #229ED9; color: black; padding: 5px 12px; border-radius: 10px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
 .promoCard h3 { font-size: 1.8rem; margin-bottom: 15px; }
 .promoCard p { color: #888; line-height: 1.6; }
 

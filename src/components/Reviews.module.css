@@ -1,13 +1,31 @@
 .section {
   padding: 100px 0;
-  background: #050505;
+  background: transparent;
   color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+  radial-gradient(circle at 20% 50%, rgba(34, 158, 217, 0.05) 0%, transparent 50%),
+  radial-gradient(circle at 80% 80%, rgba(34, 158, 217, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ШАПКА РЕЙТИНГА */
@@ -58,19 +76,39 @@
 
 /* КАРТОЧКА */
 .reviewCard {
-  background: #111;
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid #222;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.reviewCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(240, 196, 25, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.reviewCard:hover::before {
+  left: 100%;
 }
 
 .reviewCard:hover {
   border-color: #f0c419;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(240, 196, 25, 0.2);
 }
 
 .cardTop {

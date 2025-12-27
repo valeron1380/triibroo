@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import { FaPhoneAlt } from 'react-icons/fa';
 import { FaVk, FaTelegram, FaWhatsapp } from 'react-icons/fa';
+import { getTelegramLink } from '../utils/telegram';
 
 /**
  * Компонент шапки сайта.
@@ -49,7 +50,7 @@ const Header = ({ onOpenBooking }) => {
             Записаться
           </button>
           <div className={styles.headerSocials}>
-          <a href="https://web.telegram.org/k/#@tribro1" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaTelegram /></a>
+          <a href={getTelegramLink('tribro1', 'channel')} target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaTelegram /></a>
             <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaVk /></a>    
             <a href="https://wa.me/79254901313" target="_blank" rel="noreferrer" className={styles.headerSocBtn}><FaWhatsapp /></a>
           </div>

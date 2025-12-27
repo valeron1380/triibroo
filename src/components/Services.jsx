@@ -70,7 +70,7 @@ const SERVICES_DATA = {
         title: "Мойка кузова",
         items: [
           { id: "tech", title: "Бесконтактная мойка", desc: "Бесконтактная мойка (кузов, арки и коврики салона).", prices: [600, 650, 800, 900, 1100] },
-          { id: "euro", title: "Сухая/Двухфазная мойка", desc: "Двухфазная мойка кузова с использованием шампуня  (кузов, арки и коврики салона).", prices: [750, 900, 1150, 1400, 1650] },
+          { id: "euro", title: "Двухфазная мойка", desc: "Двухфазная мойка кузова с использованием шампуня  (кузов, арки и коврики салона).", prices: [750, 900, 1150, 1400, 1650] },
           { id: "lux", title: "НАНО (3х-фазная) мойка кузова", desc: "-обработка первичным составом -ручная мойка НАНОшампунем -мойка колёсных дисков, выхлопных труб -покрытие кузова наноконсерватом - осушителем", prices: [1150, 1250, 1500, 1900, 2250] },
           { id: "quartz", title: "Quartz - Light", desc: "Бесконтактная мойка кузова, обезжиривание и кварцевое покрытие (кварцевание).", prices: [2100, 2500, 3000, 3500, 4000] },
         ]
@@ -79,7 +79,6 @@ const SERVICES_DATA = {
         id: "complex",
         title: "Комплексы",
         items: [
-          { id: "std", title: "Комплекс 'Стандарт'", desc: "кузов, арки, пороги, коврики салона, пылесос салона, чистка педалей, влажная уборка пластика, мойка стёкол, чернение резины", prices: [1150, 1250, 1500, 1900, 2150] },
           { id: "prem", title: "2х-фазный Комплекс", desc: "Мойка кузова с использованием шампуня для бережной мойки, арки, пороги, коврики, пылесос салона, чистка педалей,мойка стёкол, чернение резины", prices: [1500, 1650, 1900, 2250, 2500] },
           { id: "hitech", title: "НАНО 3ёх-фазный Комплекс", desc: "Мойка кузова с использованием шампуня для бережной мойки, химчистка дисков, пылесос салона, мойка стёкол стеклоочистителем, влажная уборка салона очищающим составом, обработка кожи салона кондиционером, уборка багажника, чистка педалей, чернение резины", prices: [2800, 3200, 3700, 4200, 4700] },
           { id: "pro", title: "Комплекс 'Зимний пакет'", desc: "Комплекc 'Стандарт', обезжирование кузова, полимерное покрытие кузова, пылесос багажника, мойка дисков и выхлопных труб, обработка силиконом резиновых уплотнителей, чистка педалей, чернение резины", prices: [3000, 3400, 4150, 4500, 5000] },
@@ -93,13 +92,10 @@ const SERVICES_DATA = {
           { id: "ceramic_protect", title: "Cquarts HydrO2", desc: "Гидро 'Бомба' - защитное кварцевое покрытие.", prices: [1300, 1450, 1650, 1850, 2050] },
           { id: "metal_clean", title: "Обезжиривание кузова", desc: "Удаление битума, загрязнений и металлических вкраплений.", prices: [2500, 3150, 3750, 4400, 5000] },
           { id: "wax_coat", title: "Воск", desc: "Покрытие кузова горячим воском.", prices: [400, 450, 500, 650, 800] },
+          { id: "tie", title: "Покрытие кузова керамикой", desc: "", prices: ["от 40000 ₽", "от 40000 ₽", "от 40000 ₽", "от 40000 ₽", "от 40000 ₽"] },
           { id: "hydro", title: "Антидождь", desc: "Передняя полусфера.", prices: [1900, 15900, 1900, 2000, 2250] },
-          { id: "restore_paint", title: "Ручная полировка", desc: "Ручная полировка кузова натуральным воском.", prices: [2500, 3200, 3800, 4400, 5000] },
           { id: "polish_head", title: "Востановление цвета", desc: "Востановление цвета и блеска кузова, бесконтактная мойка, удаление паутинок, помутнений.", prices: ["от 10000 ₽", "от 12000 ₽", "от 15000 ₽", "от 15000 ₽", "от 18000 ₽"] },
-          { id: "ppf", title: "Полировка Фар", desc: "Полировка Фар (задних фонарей, повторителей поворотников).", prices: ["от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽"] },
           { id: "remove_scratches", title: "Ручная чистка кузова Глиной Clay Magic", desc: "Глубоко очищает поверхность, удалчяет все стойкие и невидимые загрязнения, делая поверхность гладкой как стекло и кристально чистой.", prices: [3200, 3800, 4400, 5000, 5650] },
-          { id: "remove_insects", title: "Полная образивная полировка ЛКП", desc: "Бесконтактная мойка, удалиние царапин, паутинок, затираний, помутнений, восстановление цвета и блеска.", prices: ["от 18000 ₽", "от 20000 ₽", "от 23000 ₽", "от 28000 ₽", "от 28000 ₽"] },
-          { id: "remove_bitumen", title: "Удаление царапин", desc: "", prices: ["от 1000 ₽", "от 1000 ₽", "от 1000 ₽", "от 1000 ₽", "от 1000 ₽"] },
           { id: "tire_shine", title: "Удаление насекомых", desc: "", prices: ["от 300 ₽", "от 300 ₽", "от 300 ₽", "от 300 ₽", "от 300 ₽"] },
           { id: "engine_protect", title: "Удаление тополиных точек", desc: "", prices: ["от 500 ₽", "от 500 ₽", "от 500 ₽", "от 500 ₽", "от 500 ₽"] },
           { id: "engine_protec", title: "Удаление битумных пятен", desc: "", prices: ["от 500 ₽ за деталь", "от 500 ₽ за деталь", "от 500 ₽ за деталь", "от 500 ₽ за деталь", "от 500 ₽ за деталь"] },
@@ -108,6 +104,25 @@ const SERVICES_DATA = {
           { id: "remove_bitum", title: "	BUMPER COAT", desc: "Защитное покрытие пластика", prices: ["от 3000 ₽", "от 3000 ₽", "от 3000 ₽", "от 3000 ₽", "от 3000 ₽"] },
           { id: "wax_coa", title: "Мойка двигателя и моторного отсека с продувкой воздухом", desc: "(Производится по согласованию гостя и под его ответственность.", prices: [700, 750, 850, 900, 950] },
 
+        ]
+      },
+      {
+        id: "interior",
+        title: "Уход за салоном",
+        items: [
+          { id: "dry_vacuum", title: "Пылесос салона", desc: "Сухая чистка салона пылесосом.", prices: ["от 250 ₽", "от 300 ₽", "от 350 ₽", "от 350 ₽", "от 450 ₽"] },
+          { id: "trunk_vacuum", title: "Уборка багажника", desc: "", prices: [300, 300, 300, 300, 400] },
+          { id: "plastic_clean", title: "Протирка пластика", desc: "Протирка пластиковых деталей с полиролью.", prices: [250, 300, 300, 350, 400] },
+          { id: "glass_protet", title: "Протирка приборной панели", desc: "", prices: [200, 200, 200, 250, 300] },
+          { id: "glass_protect", title: "Протирка стекол", desc: "Протирка стекол изнутри.", prices: [250, 300, 300, 350, 400] },
+          { id: "glass_prote", title: "	Протирка лобового стекла изнутри", desc: "", prices: [200, 200, 200, 200, 250] },
+          { id: "dry_vacu", title: "Очистка стёкл от клея 1 шт.", desc: "Сухая чистка салона пылесосом.", prices: ["от 700 ₽", "от 700 ₽", "от 700 ₽", "от 700 ₽", "от 700 ₽"] },
+          { id: "leather_care", title: "Уход за кожей", desc: "	Обработка сидений кондиционером для кожи 1 шт.", prices: [300, 300, 300, 300, 300] },
+          { id: "deodorize", title: "	Обработка силиконом резиновых уплотнений", desc: "", prices: [300, 300, 300, 300, 300] },
+          { id: "dry_ice", title: "Сухой туман", desc: "Удаление запахов и ароматизация.", prices: [1300, 1300, 1300, 1300, 1300] },
+          { id: "silence", title: "	Озонация салона", desc: "", prices: [1300, 1300, 1300, 1300, 1300] }, 
+          { id: "dry_cu", title: "Очистка лобового стекла от клея 1 шт.", desc: "", prices: ["от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 2500 ₽", "от 2500 ₽"] },
+          { id: "silen", title: "Протирка пластиковых деталей салона молочком	", desc: "", prices: [250, 300, 300, 350, 350] },
         ]
       },
       {
@@ -137,25 +152,7 @@ const SERVICES_DATA = {
   detailing: {
     title: "Детейлинг",
     subcategories: [
-      {
-        id: "interior",
-        title: "Уход за салоном",
-        items: [
-          { id: "dry_vacuum", title: "Пылесос салона", desc: "Сухая чистка салона пылесосом.", prices: ["от 250 ₽", "от 300 ₽", "от 350 ₽", "от 350 ₽", "от 450 ₽"] },
-          { id: "trunk_vacuum", title: "Уборка багажника", desc: "", prices: [300, 300, 300, 300, 400] },
-          { id: "plastic_clean", title: "Протирка пластика", desc: "Протирка пластиковых деталей с полиролью.", prices: [250, 300, 300, 350, 400] },
-          { id: "glass_protet", title: "Протирка приборной панели", desc: "", prices: [200, 200, 200, 250, 300] },
-          { id: "glass_protect", title: "Протирка стекол", desc: "Протирка стекол изнутри.", prices: [250, 300, 300, 350, 400] },
-          { id: "glass_prote", title: "	Протирка лобового стекла изнутри", desc: "", prices: [200, 200, 200, 200, 250] },
-          { id: "dry_vacu", title: "Очистка стёкл от клея 1 шт.", desc: "Сухая чистка салона пылесосом.", prices: ["от 700 ₽", "от 700 ₽", "от 700 ₽", "от 700 ₽", "от 700 ₽"] },
-          { id: "leather_care", title: "Уход за кожей", desc: "	Обработка сидений кондиционером для кожи 1 шт.", prices: [300, 300, 300, 300, 300] },
-          { id: "deodorize", title: "	Обработка силиконом резиновых уплотнений", desc: "", prices: [300, 300, 300, 300, 300] },
-          { id: "dry_ice", title: "Сухой туман", desc: "Удаление запахов и ароматизация.", prices: [1300, 1300, 1300, 1300, 1300] },
-          { id: "silence", title: "	Озонация салона", desc: "", prices: [1300, 1300, 1300, 1300, 1300] }, 
-          { id: "dry_cu", title: "Очистка лобового стекла от клея 1 шт.", desc: "", prices: ["от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 2500 ₽", "от 2500 ₽"] },
-          { id: "silen", title: "Протирка пластиковых деталей салона молочком	", desc: "", prices: [250, 300, 300, 350, 350] },
-        ]
-      },
+
       {
         id: "dryclean",
         title: "Химчистка",
@@ -168,6 +165,40 @@ const SERVICES_DATA = {
           { id: "trunk", title: "Химчистка багажника", desc: "Зависит от степени загрязненности.", prices: ["от 1500 ₽", "от 1500 ₽", "от 1500 ₽", "от 1500 ₽", "от 1500 ₽"] },
           { id: "tru", title: "Химчистка сидений", desc: "Зависит от степени загрязненности.", prices: ["от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽"] },
           { id: "tu", title: "Химчистка дисков", desc: "Зависит от степени загрязненности (за единицу)", prices: ["от 400 ₽", "от 400 ₽", "от 400 ₽", "от 400 ₽", "от 400 ₽"] },
+        ]
+      },
+      {
+        id: "polish",
+        title: "Полировка",
+        items: [
+          { id: "restore_paint", title: "Ручная полировка", desc: "Ручная полировка кузова натуральным воском.", prices: [2500, 3200, 3800, 4400, 5000] },
+          { id: "ppf", title: "Полировка Фар", desc: "Полировка Фар (задних фонарей, повторителей поворотников).", prices: ["от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽", "от 1900 ₽"] },
+          { id: "remove_insects", title: "Полная образивная полировка ЛКП", desc: "Бесконтактная мойка, удалиние царапин, паутинок, затираний, помутнений, восстановление цвета и блеска.", prices: ["от 18000 ₽", "от 20000 ₽", "от 23000 ₽", "от 28000 ₽", "от 28000 ₽"] },
+          { id: "scratch_removal", title: "Удаление царапин", desc: "Удаление царапин с кузова.", prices: ["от 1000 ₽", "от 1000 ₽", "от 1000 ₽", "от 1000 ₽", "от 1000 ₽"] },
+        ]
+      },
+      {
+        id: "soundproofing",
+        title: "Шумоизоляция",
+        items: [
+          { id: "full_sound", title: "Пакет \"Комплексная шумоизоляция\"", desc: "Комплексная шумоизоляция всего автомобиля. Цена зависит от модели автомобиля.", prices: ["от 70000 ₽", "от 70000 ₽", "от 70000 ₽", "от 70000 ₽", "от 70000 ₽"] },
+          { id: "floor_sound", title: "Шумоизоляция пола", desc: "Установка шумоизоляции на пол салона.", prices: ["от 35000 ₽", "от 35000 ₽", "от 35000 ₽", "от 35000 ₽", "от 35000 ₽"] },
+          { id: "doors_sound", title: "Шумоизоляция дверей", desc: "Установка шумоизоляции на двери автомобиля.", prices: ["от 30000 ₽", "от 30000 ₽", "от 30000 ₽", "от 30000 ₽", "от 30000 ₽"] },
+          { id: "roof_sound", title: "Шумоизоляция крыши", desc: "Установка шумоизоляции на крышу салона.", prices: ["от 15000 ₽", "от 15000 ₽", "от 15000 ₽", "от 15000 ₽", "от 15000 ₽"] },
+          { id: "hood_sound", title: "Шумоизоляция капота", desc: "Установка шумоизоляции на капот.", prices: ["от 5000 ₽", "от 5000 ₽", "от 5000 ₽", "от 5000 ₽", "от 5000 ₽"] },
+          { id: "trunk_sound", title: "Шумоизоляция багажника", desc: "Установка шумоизоляции в багажнике.", prices: ["от 28000 ₽", "от 28000 ₽", "от 28000 ₽", "от 28000 ₽", "от 28000 ₽"] },
+          { id: "dashboard_sound", title: "Шумоизоляция торпеды", desc: "Установка шумоизоляции на торпеду (панель приборов).", prices: ["от 35000 ₽", "от 35000 ₽", "от 35000 ₽", "от 35000 ₽", "от 35000 ₽"] },
+          { id: "wheel_arches_sound", title: "Шумоизоляция колесных арок с улицы", desc: "Установка шумоизоляции на колесные арки с внешней стороны.", prices: ["от 30000 ₽", "от 30000 ₽", "от 30000 ₽", "от 30000 ₽", "от 30000 ₽"] },
+        ]
+      },
+      {
+        id: "ppf",
+        title: "Бронеплёнка",
+        items: [
+          { id: "risk_zones_ppf", title: "Оклейка зон риска", desc: "Оклейка зон риска: капот, фары, бампер, крылья, зеркала, стойки лобового, полоса на крышу. Срок выполнения: 5 часов.", prices: [90000, 90000, 90000, 90000, 90000] },
+          { id: "full_body_ppf", title: "Оклейка всего кузова а/м (то что окрашено в цвет)", desc: "Полная оклейка всего кузова автомобиля (окрашенные элементы).", prices: [280000, 280000, 280000, 280000, 280000] },
+          { id: "matte_ppf", title: "Оклейка кузова матовой бронеплёнкой.", desc: "", prices: [320000, 320000, 320000, 320000, 320000] },
+          { id: "headlight_ppf", title: "Оклейка фар бронеплёнкой", desc: "Оклейка фар защитной плёнкой.", prices: [9000, 9000, 9000, 9000, 9000] },
         ]
       }
     ]
@@ -205,8 +236,35 @@ const Services = ({ onOpenBooking }) => {
   const [showClassInfo, setShowClassInfo] = useState(false);
   const [selectedIds, setSelectedIds] = useState(new Set());
 
+  // Индекс класса "Мото" (6-й класс, индекс 5)
+  const MOTO_CLASS_INDEX = 5;
+
   // Сброс подкатегории при смене вкладки
-  useEffect(() => { setActiveSub(0); }, [activeMain]);
+  useEffect(() => { 
+    setActiveSub(0);
+  }, [activeMain]);
+
+  // Автоматическое переключение на категорию "Мото" при выборе класса "Мото"
+  useEffect(() => {
+    if (carClass === MOTO_CLASS_INDEX && activeMain !== 'moto') {
+      setActiveMain('moto');
+    } else if (carClass !== MOTO_CLASS_INDEX && activeMain === 'moto') {
+      setActiveMain('carwash');
+    }
+  }, [carClass, activeMain]);
+
+  // Блокировка скролла при открытии модалки классов
+  useEffect(() => {
+    if (showClassInfo) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+    // Очистка при размонтировании компонента
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [showClassInfo]);
 
   const currentSubcategories = SERVICES_DATA[activeMain].subcategories;
   const currentServices = currentSubcategories[activeSub].items;
@@ -238,11 +296,13 @@ const Services = ({ onOpenBooking }) => {
 
   const getSelectedDetails = () => {
     const selected = [];
+    // Для класса "Мото" используем индекс 0, так как все цены одинаковые
+    const priceIndex = carClass === MOTO_CLASS_INDEX ? 0 : carClass;
     Object.values(SERVICES_DATA).forEach(cat => {
       cat.subcategories.forEach(sub => {
         sub.items.forEach(item => {
           if (selectedIds.has(item.id)) {
-            selected.push({ ...item, currentPrice: item.prices[carClass] });
+            selected.push({ ...item, currentPrice: item.prices[priceIndex] });
           }
         });
       });
@@ -277,7 +337,8 @@ const Services = ({ onOpenBooking }) => {
     { icon: <FaCarSide />, label: "" },
     { icon: <MdOutlineDirectionsCarFilled />, label: "" },
     { icon: <FaTruckMonster />, label: "" },
-    { icon: <FaShuttleVan />, label: "" }
+    { icon: <FaShuttleVan />, label: "" },
+    { icon: <FaMotorcycle />, label: "Мотоцикл" }
   ];
 
   return (
@@ -288,10 +349,12 @@ const Services = ({ onOpenBooking }) => {
         {/* --- ВЫБОР КЛАССА --- */}
         <div className={styles.classSelectorWrapper}>
           <div className={styles.classHeaderRow}>
-            <span className={styles.classLabel}>Класс вашего автомобиля:</span>
-            <button className={styles.infoBtn} onClick={() => setShowClassInfo(true)}>
-              <FaInfoCircle /> Таблица классов
-            </button>
+            <span className={styles.classLabel}>Класс вашего транспорта:</span>
+            {carClass !== MOTO_CLASS_INDEX && (
+              <button className={styles.infoBtn} onClick={() => setShowClassInfo(true)}>
+                <FaInfoCircle /> Таблица классов
+              </button>
+            )}
           </div>
           <div className={styles.classGrid}>
             {CLASS_ICONS.map((item, idx) => (
@@ -301,7 +364,9 @@ const Services = ({ onOpenBooking }) => {
                 onClick={() => setCarClass(idx)}
               >
                 <div className={styles.iconBox}>{item.icon}</div>
-                <span className={styles.classText}>{idx + 1} Класс</span>
+                <span className={styles.classText}>
+                  {idx === MOTO_CLASS_INDEX ? 'Мото' : `${idx + 1} Класс`}
+                </span>
                 <span className={styles.classSubText}>{item.label}</span>
               </button>
             ))}
@@ -310,15 +375,25 @@ const Services = ({ onOpenBooking }) => {
 
         {/* --- ТАБЫ --- */}
         <div className={styles.mainTabs}>
-          {Object.keys(SERVICES_DATA).map(key => (
-            <button 
-              key={key}
-              className={`${styles.mainTab} ${activeMain === key ? styles.activeMain : ''}`} 
-              onClick={() => setActiveMain(key)}
-            >
-              {SERVICES_DATA[key].title}
-            </button>
-          ))}
+          {Object.keys(SERVICES_DATA).map(key => {
+            // Скрываем категорию "Мото" если выбран класс автомобиля (1-5)
+            if (key === 'moto' && carClass !== MOTO_CLASS_INDEX) {
+              return null;
+            }
+            // Скрываем все категории кроме "Мото" если выбран класс "Мото"
+            if (key !== 'moto' && carClass === MOTO_CLASS_INDEX) {
+              return null;
+            }
+            return (
+              <button 
+                key={key}
+                className={`${styles.mainTab} ${activeMain === key ? styles.activeMain : ''}`} 
+                onClick={() => setActiveMain(key)}
+              >
+                {SERVICES_DATA[key].title}
+              </button>
+            );
+          })}
         </div>
         <div className={styles.subTabs}>
           {currentSubcategories.map((sub, idx) => (
@@ -347,9 +422,14 @@ const Services = ({ onOpenBooking }) => {
               <p>{service.desc}</p>
               <div className={styles.cardFooter}>
                 <span className={styles.price}>
-                  {typeof service.prices[carClass] === 'string' 
-                    ? service.prices[carClass] 
-                    : `${service.prices[carClass].toLocaleString()} ₽`}
+                  {(() => {
+                    // Для класса "Мото" используем индекс 0, так как все цены одинаковые
+                    const priceIndex = carClass === MOTO_CLASS_INDEX ? 0 : carClass;
+                    const price = service.prices[priceIndex];
+                    return typeof price === 'string' 
+                      ? price 
+                      : `${price.toLocaleString()} ₽`;
+                  })()}
                 </span>
               </div>
             </div>
@@ -399,6 +479,11 @@ const Services = ({ onOpenBooking }) => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+              <div className={styles.modalFooter}>
+                <button className={styles.closeModalBtn} onClick={() => setShowClassInfo(false)}>
+                  Закрыть
+                </button>
               </div>
             </div>
           </div>

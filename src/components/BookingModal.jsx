@@ -4,6 +4,7 @@ import { FaTimes, FaPhoneAlt, FaInfoCircle, FaTelegramPlane } from 'react-icons/
 import { MdDirectionsCar } from 'react-icons/md';
 import { FaCarSide, FaTruckMonster, FaShuttleVan } from 'react-icons/fa';
 import { MdOutlineDirectionsCarFilled } from 'react-icons/md';
+import { getTelegramLink } from '../utils/telegram';
 
 const CLASS_ICONS = [
   { icon: <MdDirectionsCar />, label: "Мини" },
@@ -33,13 +34,10 @@ const BookingModal = ({ isOpen, onClose, orderData = null }) => {
     }
   };
 
-  const getTelegramLink = () => {
-    const message = createMessage();
-    return `https://t.me/${TELEGRAM_USERNAME}?text=${message}`;
-  };
-
   const handleTelegramClick = () => {
-    window.open(getTelegramLink(), '_blank');
+    const message = createMessage();
+    const link = getTelegramLink(TELEGRAM_USERNAME, 'user', message);
+    window.open(link, '_blank');
     onClose();
   };
 

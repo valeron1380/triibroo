@@ -2,6 +2,7 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import styles from './Footer.module.css';
 import { FaVk, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { getTelegramLink } from '../utils/telegram';
 
 const Footer = () => {
   // Координаты центра (Москва, пример)
@@ -28,7 +29,7 @@ const Footer = () => {
         </div>
         <div className={styles.socials}>
           <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer"><FaVk /></a>
-          <a href="https://web.telegram.org/k/#@tribro1" target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
+          <a href={getTelegramLink('tribro1', 'channel')} target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
           <a href="https://wa.me/79254901313" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
         </div>
         <div className={styles.copyright}>

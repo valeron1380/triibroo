@@ -2,11 +2,12 @@ import React from 'react';
 import { FaRobot, FaTelegramPlane } from 'react-icons/fa';
 import styles from './BotButton.module.css';
 import { motion } from 'framer-motion';
+import { getTelegramLink } from '../utils/telegram';
 
 const BotButton = () => {
   return (
     <motion.a
-      href="https://web.telegram.org/k/#@tribro_bot" // Ссылка для открытия приложения Telegram
+      href={getTelegramLink('tribro_bot', 'bot')}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.botButton}

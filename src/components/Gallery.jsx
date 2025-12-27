@@ -3,6 +3,7 @@ import styles from './Gallery.module.css';
 import { Reveal } from './ui/Reveal';
 import { motion, AnimatePresence } from 'framer-motion'; // Добавлен AnimatePresence
 import { FaSearchPlus, FaTimes, FaVk, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { getTelegramLink } from '../utils/telegram';
 
 // Импорты Swiper (оставляем как есть)
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -160,7 +161,7 @@ const Gallery = () => {
           <Reveal delay={0.1}>
             <div className={styles.socialButtons}>
             <a 
-                href="https://web.telegram.org/k/#@tribro1" 
+                href={getTelegramLink('tribro1', 'channel')}
                 target="_blank" 
                 rel="noreferrer" 
                 className={styles.socialBtn}

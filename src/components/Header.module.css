@@ -1,10 +1,12 @@
 .header {
-  background-color: var(--bg-dark);
-  border-bottom: 1px solid #333;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95) 0%, rgba(26, 26, 26, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(34, 158, 217, 0.2);
   padding: 15px 0;
-  position: sticky; /* Закрепление шапки при прокрутке */
+  position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 .container {
@@ -52,11 +54,28 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-gold);
+  transition: width 0.3s ease;
 }
 
 .navLink:hover {
-  color: white;
+  color: #229ED9;
+}
+
+.navLink:hover::after {
+  width: 100%;
 }
 
 /* === СТИЛИ КНОПОК ДЕЙСТВИЙ === */
@@ -77,19 +96,40 @@
 }
 
 .bookingBtn {
-  background-color: white;
-  color: black;
+  background: var(--gradient-gold);
+  color: #000;
   border: none;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(34, 158, 217, 0.3);
+}
+
+.bookingBtn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s, height 0.4s;
+}
+
+.bookingBtn:hover::before {
+  width: 300px;
+  height: 300px;
 }
 
 .bookingBtn:hover {
-  background-color: #eee;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(34, 158, 217, 0.5);
 }
 
 .actions {
@@ -112,7 +152,7 @@
 }
 
 .headerSocBtn:hover {
-  color: #f0c419;
+  color: #229ED9;
   transform: translateY(-2px);
 }
 

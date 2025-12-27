@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Contacts.module.css';
 import { FaMapMarkerAlt, FaPhoneAlt, FaClock, FaVk, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
+import { getTelegramLink } from '../utils/telegram';
 
 const Contacts = () => {
   return (
@@ -36,7 +37,7 @@ const Contacts = () => {
           <div className={styles.socials}>
             <h3 className={styles.socialsLabel}>Наши соцсети</h3>
             <div className={styles.socialsButtons}>
-            <a href="https://web.telegram.org/k/#@tribro1" target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
+            <a href={getTelegramLink('tribro1', 'channel')} target="_blank" rel="noreferrer"><FaTelegramPlane /></a>
               <a href="https://vk.com/club228221372" target="_blank" rel="noreferrer"><FaVk /></a>
 
             </div>

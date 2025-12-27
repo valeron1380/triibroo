@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100%;
     /* Заглушка фона - замените url на реальное фото */
-    background-image: url('/images/hero-image.jpg');
+    background-image: url('/images/hero-image1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Параллакс эффект */
@@ -14,7 +14,9 @@
   .overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));
+    background: 
+      linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7)),
+      radial-gradient(circle at 50% 50%, rgba(34, 158, 217, 0.1) 0%, transparent 70%);
   }
   .content {
     position: relative;
@@ -26,9 +28,21 @@
     font-size: 5rem;
     letter-spacing: 10px;
     margin-bottom: 10px;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #ffffff 0%, #b0b0b0 50%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(245, 241, 224, 0.5);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      filter: drop-shadow(0 0 10px rgba(34, 158, 217, 0.5));
+    }
+    to {
+      filter: drop-shadow(0 0 20px rgba(133, 193, 226, 0.8));
+    }
   }
   .subtitle {
     font-size: 2rem;
@@ -38,16 +52,27 @@
   }
   .ctaButton {
     padding: 20px 60px;
-    border: 1px solid white;
+    border: 2px solid rgba(34, 158, 217, 0.8);
+    background: linear-gradient(135deg, rgba(34, 158, 217, 0.2) 0%, rgba(34, 158, 217, 0.1) 100%);
     color: white;
     text-decoration: none;
     font-weight: 900;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
   }
+
+  .ctaButton::before {
+    display: none;
+  }
+
   .ctaButton:hover {
-    background: white;
-    color: black;
+    border-color: #229ED9;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(34, 158, 217, 0.5);
   }
   @media (max-width: 768px) {
     .title { 
@@ -56,7 +81,7 @@
     
     .hero {
       /* Фото для телефонов (вертикальное) */
-      background-image: url('/images/hero-mobile.jpg');
+      background-image: url('/images/hero-mobile1.jpg');
       background-attachment: scroll; /* На телефонах параллакс часто тормозит, лучше отключить */
       background-position: center center;
       background-size: cover;
