@@ -82,7 +82,7 @@
     .hero {
       height: 93vh;
       /* Фото для телефонов (вертикальное) */
-      background-image: url('/images/hero-mobile1.jpg');
+      background-image: url('/images/hero-mobile11.png');
       background-attachment: scroll; /* На телефонах параллакс часто тормозит, лучше отключить */
       background-position: center center;
       background-size: cover;
