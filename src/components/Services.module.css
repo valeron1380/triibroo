@@ -74,20 +74,45 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(34, 158, 217, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(34, 158, 217, 0.2) 0%, transparent 70%);
+  -webkit-animation: rotate 20s linear infinite;
   animation: rotate 20s linear infinite;
+  will-change: transform;
+  transform-origin: center center;
   pointer-events: none;
+  z-index: 0;
+}
+
+@-webkit-keyframes rotate {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 @keyframes rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.classHeaderRow { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .classSelectorWrapper::before {
+    -webkit-animation: rotate 20s linear infinite;
+    animation: rotate 20s linear infinite;
+  }
+}
+.classHeaderRow { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 25px; 
+  position: relative;
+  z-index: 1;
+}
 .classLabel { font-weight: 600; color: #888; }
 .infoBtn { background: none; border: none; color: #229ED9; cursor: pointer; display: flex; align-items: center; gap: 8px; font-weight: 600; }
 
-.classGrid { 
+.classGrid {
+  position: relative;
+  z-index: 1; 
   display: grid; 
   grid-template-columns: repeat(6, 1fr); 
   gap: 15px;
@@ -102,6 +127,14 @@
 @media (max-width: 768px) {
   .classGrid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .classSelectorWrapper::before {
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(34, 158, 217, 0.25) 0%, transparent 60%);
   }
 }
 .classCard { 
@@ -118,6 +151,7 @@
   outline: none;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .classCard::before {
