@@ -456,38 +456,44 @@ const Services = ({ onOpenBooking }) => {
 
         {/* --- МОДАЛКА ТАБЛИЦЫ --- */}
         {showClassInfo && (
-          <div className={styles.modalOverlay} onClick={() => setShowClassInfo(false)}>
-            <div className={styles.modalContentWide} onClick={e => e.stopPropagation()}>
-              <div className={styles.modalHeader}>
-                <h3>Классификация по моделям</h3>
-                <FaTimes className={styles.closeIcon} onClick={() => setShowClassInfo(false)} />
-              </div>
-              <div className={styles.tableScroll}>
-                <table className={styles.customTable}>
-                  <thead>
-                    <tr>
-                      <th>Марка</th>
-                      {CLASS_ICONS.map((_, i) => <th key={i}>{i+1} кл.</th>)}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {CAR_CLASSIFICATION_DATA.map((row, i) => (
-                      <tr key={i}>
-                        <td>{row.brand}</td>
-                        {row.models.map((m, j) => <td key={j}>{m}</td>)}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <div className={styles.modalFooter}>
-                <button className={styles.closeModalBtn} onClick={() => setShowClassInfo(false)}>
-                  Закрыть
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+  <div className={styles.modalOverlay} onClick={() => setShowClassInfo(false)}>
+    <div className={styles.modalContentWide} onClick={e => e.stopPropagation()}>
+      <div className={styles.modalHeader}>
+        <h3>Классификация по моделям</h3>
+        <FaTimes className={styles.closeIcon} onClick={() => setShowClassInfo(false)} />
+      </div>
+      <div className={styles.tableScroll}>
+        <table className={styles.customTable}>
+          <thead>
+            <tr>
+              <th>Марка</th>
+              {/* Используем .slice(0, 5), чтобы вывести только автомобильные классы */}
+              {CLASS_ICONS.slice(0, 5).map((_, i) => (
+                <th key={i}>{i + 1} кл.</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {CAR_CLASSIFICATION_DATA.map((row, i) => (
+              <tr key={i}>
+                <td>{row.brand}</td>
+                {/* Здесь row.models уже содержит 5 элементов, они четко встанут под заголовки */}
+                {row.models.map((m, j) => (
+                  <td key={j}>{m}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className={styles.modalFooter}>
+        <button className={styles.closeModalBtn} onClick={() => setShowClassInfo(false)}>
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </div>
+)}
       </div>
     </section>
   );
