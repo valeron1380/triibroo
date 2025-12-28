@@ -80,6 +80,7 @@
     }
     
     .hero {
+      height: 70vh;
       /* Фото для телефонов (вертикальное) */
       background-image: url('/images/hero-mobile1.jpg');
       background-attachment: scroll; /* На телефонах параллакс часто тормозит, лучше отключить */
