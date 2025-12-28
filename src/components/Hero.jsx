@@ -22,7 +22,7 @@ const Hero = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className={styles.subtitle}
         >
-          Детейлинг сервис премиум-класса
+          Автомоечный комплекс премиального качества
         </motion.p>
         
         <motion.div 
