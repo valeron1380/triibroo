@@ -78,11 +78,11 @@
     .title { 
       font-size: 3rem; 
       position: relative;
-      bottom: 25vh;
+      bottom: 23vh;
     }
     .subtitle {
       position: relative;
-      bottom: 23vh;
+      bottom: 21vh;
     }
     .ctaButton {
       position: relative;
