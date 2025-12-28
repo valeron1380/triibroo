@@ -2,7 +2,7 @@
     height: 100vh;
     width: 100%;
     /* Заглушка фона - замените url на реальное фото */
-    background-image: url('/images/hero-image1.jpg');
+    background-image: url('/images/hero-image11.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Параллакс эффект */
@@ -32,8 +32,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+    text-shadow: 0 0 30px rgb(206, 172, 252);
     animation: glow 3s ease-in-out infinite alternate;
+    position: relative;
+      bottom: 25vh;
   }
 
   @keyframes glow {
@@ -47,8 +49,11 @@
   .subtitle {
     font-size: 2rem;
     color: #ffffff;
+    text-shadow: 0 0 30px rgb(206, 172, 252);
     margin-bottom: 40px;
     font-weight: 300;
+    position: relative;
+      bottom: 25vh;
   }
   .ctaButton {
     padding: 20px 60px;
@@ -62,6 +67,8 @@
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    position: relative;
+    top: 8vh;
   }
 
   .ctaButton::before {

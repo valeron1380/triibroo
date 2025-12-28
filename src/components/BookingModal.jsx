@@ -6,6 +6,7 @@ import { FaCarSide, FaTruckMonster, FaShuttleVan } from 'react-icons/fa';
 import { MdOutlineDirectionsCarFilled } from 'react-icons/md';
 import { getTelegramLink } from '../utils/telegram';
 
+
 const CLASS_ICONS = [
   { icon: <MdDirectionsCar />, label: "Мини" },
   { icon: <FaCarSide />, label: "Седан" },

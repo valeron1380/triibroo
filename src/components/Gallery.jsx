@@ -25,13 +25,14 @@ const sliderPhotos = [
 const gridItems = [
   { id: 1, src: '/images/grid1.jpg', title: 'Мойка днища', category: 'Днище' },
   { id: 2, src: '/images/grid2.jpg', title: 'Мойка кузова', category: 'Кузов' },
-  { id: 3, src: '/images/grid3.jpg', title: 'Поклейка плёнки', category: 'Пленка' },
-  { id: 4, src: '/images/grid4.jpg', title: 'Полировка кузова', category: 'Полировка' },
-  { id: 5, src: '/images/grid5.jpg', title: 'Чистка салона', category: 'Салон' },
-  { id: 6, src: '/images/grid6.jpg', title: 'Установка защитной плёнки', category: 'Салон' },
-  { id: 7, src: '/images/grid7.jpg', title: 'Мойка днища', category: 'Днище' },
-  { id: 8, src: '/images/grid8.jpg', title: 'Установка шумоизоляции', category: 'Шумоизоляция' },
-  { id: 9, src: '/images/grid9.jpg', title: 'Наша шумоизоляция', category: 'Шумоизоляция' },
+  { id: 3, src: '/images/grid10.jpg', title: 'Мойка радиаторов', category: 'Мойка радиаторов' },
+  { id: 4, src: '/images/grid7.jpg', title: 'Мойка днища', category: 'Днище' },
+  { id: 5, src: '/images/grid3.jpg', title: 'Поклейка плёнки', category: 'Пленка' },
+  { id: 6, src: '/images/grid4.jpg', title: 'Полировка кузова', category: 'Полировка' },
+  { id: 7, src: '/images/grid5.jpg', title: 'Чистка салона', category: 'Салон' },
+  { id: 8, src: '/images/grid6.jpg', title: 'Установка защитной плёнки', category: 'Салон' },
+  { id: 9, src: '/images/grid8.jpg', title: 'Установка шумоизоляции', category: 'Шумоизоляция' },
+  { id: 10, src: '/images/grid9.jpg', title: 'Наша шумоизоляция', category: 'Шумоизоляция' },
 ];
 
 const Gallery = () => {
