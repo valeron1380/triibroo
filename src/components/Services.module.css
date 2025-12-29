@@ -325,7 +325,7 @@
   display: flex; 
   align-items: center; 
   gap: 40px; 
-  z-index: 1000; 
+  z-index: 999999; 
   box-shadow: 
     0 20px 50px rgba(0,0,0,0.5),
     0 0 30px rgba(34, 158, 217, 0.5);
@@ -344,7 +344,7 @@
       0 0 50px rgba(133, 193, 226, 0.8);
   }
 }
-.cartInfo strong { display: block; font-size: 1.4rem; line-height: 1.1; }
+.cartInfo strong { display: block; font-size: 1.4rem; line-height: 1.1; z-index: 999999; }
 .cartInfo p { margin: 0; font-size: 0.8rem; color: #666; font-weight: 700; }
 .orderBtn { 
   background: #000; 

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'; // Добавлен Ani
 import { FaSearchPlus, FaTimes, FaVk, FaTelegramPlane, FaWhatsapp } from 'react-icons/fa';
 import { getTelegramLink } from '../utils/telegram';
 
+
 // Импорты Swiper (оставляем как есть)
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';

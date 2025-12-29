@@ -10,7 +10,7 @@ import Reviews from './components/Reviews';
 import Contacts from './components/Contacts';
 import Footer from './components/Footer'; // Если есть
 import BookingModal from './components/BookingModal';
-
+import styles from './App.module.css';
 function App() {
   const [isBookingModalOpen, setBookingModalOpen] = useState(false);
   const [orderData, setOrderData] = useState(null);
@@ -69,7 +69,7 @@ function App() {
       <Footer />
 
       {/* Общая модалка записи */}
-      <BookingModal 
+      <BookingModal
         isOpen={isBookingModalOpen} 
         onClose={handleCloseBooking}
         orderData={orderData}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Services.module.css';
+import { createPortal } from 'react-dom';
 import { Reveal } from './ui/Reveal';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaInfoCircle, FaCheck, FaShoppingBag, FaTimes, FaCarSide, FaTruckMonster, FaShuttleVan, FaMotorcycle } from 'react-icons/fa';
@@ -449,21 +450,27 @@ const Services = ({ onOpenBooking }) => {
         </motion.div>
 
         {/* --- КОРЗИНА (FLOATING) --- */}
-        <AnimatePresence>
-          {selectedIds.size > 0 && (
-            <motion.div className={styles.cartBar} initial={{ y: 100 }} animate={{ y: 0 }} exit={{ y: 100 }}>
-              <div className={styles.cartInfo}>
-                <strong>
-                  {hasFromPrices ? 'от ' : ''}{totalPrice.toLocaleString()} ₽
-                </strong>
-                <p>{selectedIds.size} услуг выбрано</p>
-              </div>
-              <button className={styles.orderBtn} onClick={handleOpenBooking}>
-                Записаться <FaShoppingBag />
-              </button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+{selectedIds.size > 0 && createPortal(
+  <AnimatePresence>
+    <motion.div 
+      className={styles.cartBar} 
+      initial={{ y: 100, opacity: 0 }} 
+      animate={{ y: 0, opacity: 1 }} 
+      exit={{ y: 100, opacity: 0 }}
+    >
+      <div className={styles.cartInfo}>
+        <strong>
+          {hasFromPrices ? 'от ' : ''}{totalPrice.toLocaleString()} ₽
+        </strong>
+        <p>{selectedIds.size} услуг выбрано</p>
+      </div>
+      <button className={styles.orderBtn} onClick={handleOpenBooking}>
+        Записаться <FaShoppingBag />
+      </button>
+    </motion.div>
+  </AnimatePresence>,
+  document.body
+)}
 
 
         {/* --- МОДАЛКА ТАБЛИЦЫ --- */}
